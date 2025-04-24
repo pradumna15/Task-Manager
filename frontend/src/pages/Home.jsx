@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import About from "./About";
-import Footer from "../components/Footer";
 
 const Home = () => {
   const navigate = useNavigate();
 
-  // ✅ Fix: Make About button scroll smoothly to the About section
+  // Scroll to About
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -14,7 +13,7 @@ const Home = () => {
     }
   };
 
-  // ✅ Fix: Make Contact Us button scroll smoothly to the Footer
+  // Scroll to Footer
   const scrollToFooter = () => {
     const footerSection = document.getElementById("footer");
     if (footerSection) {
@@ -40,14 +39,12 @@ const Home = () => {
           >
             Sign Up
           </button>
-          {/* About Button */}
           <button
             onClick={scrollToAbout}
             className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300"
           >
             About Us
           </button>
-          {/* Contact Us Button */}
           <button
             onClick={scrollToFooter}
             className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300"
@@ -57,7 +54,7 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* Home Page */}
+      {/* Hero Section */}
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-700 text-white text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
@@ -75,10 +72,10 @@ const Home = () => {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-lg text-gray-300 mt-4 max-w-2xl"
         >
-          Organize your tasks effectively, stay productive, and achieve your goals with ease.
+          Organize your tasks effectively, stay productive, and achieve your
+          goals with ease.
         </motion.p>
 
-        {/* Call-to-Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,17 +97,12 @@ const Home = () => {
         </motion.div>
       </div>
 
-      {/* Add Space Between Home and About */}
+      {/* Space before About */}
       <div className="h-32"></div>
 
       {/* About Section */}
       <div id="about">
         <About />
-      </div>
-
-      {/* Footer Section */}
-      <div id="footer">
-        <Footer />
       </div>
     </div>
   );
